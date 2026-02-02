@@ -42,9 +42,11 @@ checkpoints/
 *.pt
 *.ckpt
 
-# Logs
+# Logs and results
 logs/
 *.log
+results/
+output/
 
 # IDE
 .vscode/

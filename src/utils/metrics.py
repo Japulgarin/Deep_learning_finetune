@@ -59,8 +59,10 @@ def calculate_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float
     rmse = np.sqrt(mse)
     r2 = r2_score(y_true, y_pred)
     
-    # Mean Absolute Percentage Error
-    mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+    # Mean Absolute Percentage Error (handle zero values)
+    # Use epsilon to avoid division by zero
+    epsilon = 1e-10
+    mape = np.mean(np.abs((y_true - y_pred) / (y_true + epsilon))) * 100
     
     return {
         'MAE': mae,
