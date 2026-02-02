@@ -28,15 +28,15 @@ env/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Data
-data/
-*.csv
-*.json
+# Data (datasets)
+datasets/
+data/*.csv
+data/*.json
 *.pkl
 *.h5
 
-# Models
-models/
+# Models (saved weights)
+saved_models/
 checkpoints/
 *.pth
 *.pt
