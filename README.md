@@ -54,12 +54,25 @@ cd Deep_learning_finetune
 pip install -r requirements.txt
 ```
 
+Or use the quick setup script:
+```bash
+./setup.sh
+```
+
 ### Basic Training
 
 Train a simple model with generated sample data:
 
 ```bash
-python train.py --epochs 30 --batch-size 32 --lr 0.001
+# Using the helper script
+./run_example.sh examples/simple_training.py
+
+# Or set PYTHONPATH manually
+export PYTHONPATH="${PWD}:${PYTHONPATH}"
+python examples/simple_training.py
+
+# Using the main training script
+./run_example.sh train.py --epochs 30 --batch-size 32 --lr 0.001
 ```
 
 ### Quick Example
@@ -148,7 +161,7 @@ The `AirbnbDataLoader` class handles:
 ### Example 1: Simple Training
 
 ```bash
-python examples/simple_training.py
+./run_example.sh examples/simple_training.py
 ```
 
 This will:
@@ -160,7 +173,7 @@ This will:
 ### Example 2: Fine-Tuning with Transfer Learning
 
 ```bash
-python examples/finetune_example.py
+./run_example.sh examples/finetune_example.py
 ```
 
 This demonstrates:
@@ -172,7 +185,7 @@ This demonstrates:
 ### Example 3: Custom Training Script
 
 ```bash
-python train.py \
+./run_example.sh train.py \
     --model-type pretrained \
     --epochs 50 \
     --batch-size 64 \
